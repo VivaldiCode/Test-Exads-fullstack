@@ -1,0 +1,15 @@
+<div>
+  <header>
+    <h1>{{ 'app.title' | translate }}</h1>
+    <div class="language-selector">
+      <label for="language">Language:</label>
+      <select id="language" (change)="changeLanguage($event)">
+        <option value="en">English</option>
+        <option value="pt">Português</option>
+        <!-- Adicione mais opções de idiomas conforme necessário -->
+      </select>
+    </div>
+    <button (click)="addNewUser()">Add New User</button>
+  </header>
+  <router-outlet></router-outlet>
+</div>

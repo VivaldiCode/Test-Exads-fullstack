@@ -1,0 +1,6 @@
+{
+  "require": {
+    "ext-pdo": "*",
+    "vendor/exads/ab-test-data": "*"
+  }
+}
