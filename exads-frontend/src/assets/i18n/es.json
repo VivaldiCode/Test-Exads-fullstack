@@ -1,0 +1,43 @@
+{
+  "app": {
+    "title": "Prueba FrontEnd de Exads",
+    "addUser": "Agregar nuevo usuario",
+    "language": "Cambiar idioma",
+    "list": {
+      "columns": {
+        "username": "Nombre de usuario",
+        "fullName": "Nombre completo",
+        "email": "Correo electrónico",
+        "status": "Estado",
+        "createdDate": "Fecha de creación",
+        "actions": "Acciones"
+      },
+      "status": {
+        "active": "Activo",
+        "disabled": "Desactivado"
+      },
+      "itemsPerPageLabel": "Ítems por página:",
+      "firstPageLabel": "Primera página",
+      "lastPageLabel": "Última página",
+      "nextPageLabel": "Página siguiente",
+      "previousPageLabel": "Página anterior",
+      "Page": "Página",
+      "of": "de"
+    },
+    "editUserModal": {
+      "addUser": "Agregar nuevo usuario",
+      "editUser": "Editar usuario",
+      "firstName": "Primer nombre",
+      "lastName": "Apellido",
+      "username": "Nombre de usuario",
+      "cancel": "Cancelar",
+      "saveChanges": "Guardar cambios",
+      "userStatus": "Estado del usuario",
+      "email": "Correo electrónico",
+      "active": "Activo",
+      "disabled": "Desactivado",
+      "usernameAlreadyTaken": "Nombre de usuario ya tomado",
+      "close": "Cerrar"
+    }
+  }
+}

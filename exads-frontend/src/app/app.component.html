@@ -1,15 +1,16 @@
-<div>
-  <header>
-    <h1>{{ 'app.title' | translate }}</h1>
-    <div class="language-selector">
-      <label for="language">Language:</label>
-      <select id="language" (change)="changeLanguage($event)">
-        <option value="en">English</option>
-        <option value="pt">Português</option>
-        <!-- Adicione mais opções de idiomas conforme necessário -->
-      </select>
-    </div>
-    <button (click)="addNewUser()">Add New User</button>
-  </header>
-  <router-outlet></router-outlet>
+<div class="header">
+  <h4>{{ 'app.title' | translate }}</h4>
+  <div class="language-selector">
+    <!-- Utilize mat-menu para criar o menu -->
+    <button mat-button [matMenuTriggerFor]="languageMenu">
+      {{ 'app.language' | translate }}
+    </button>
+    <mat-menu #languageMenu="matMenu">
+      <button mat-menu-item (click)="changeLanguage('en')">English</button>
+      <button mat-menu-item (click)="changeLanguage('pt')">Português</button>
+      <button mat-menu-item (click)="changeLanguage('es')">Espanhol</button>
+    </mat-menu>
+  </div>
+  <button mat-button (click)="addNewUser()">{{ 'app.addUser' | translate }}</button>
 </div>
+<router-outlet></router-outlet>

@@ -12,6 +12,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSortModule} from "@angular/material/sort";
 import {AppTranslateModule} from './translate.module';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatButtonModule} from "@angular/material/button";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatInputModule} from "@angular/material/input";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -29,7 +37,15 @@ import {AppTranslateModule} from './translate.module';
     HttpClientModule,
     AppTranslateModule,
     FormsModule,
-    MatSortModule
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

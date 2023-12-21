@@ -1,19 +1,26 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ApiService} from "../services/api.service";
 import {FormUserComponent} from "../form-user/form-user.component";
 import {MatDialog} from "@angular/material/dialog";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatPaginator, MatPaginatorIntl} from "@angular/material/paginator";
+import {MyCustomPaginatorIntl} from "../MyCustomPaginatorIntl";
+import {User} from "../models/user.model";
 
 
 @Component({
   selector: 'exads-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
+  providers: [{provide: MatPaginatorIntl, useClass: MyCustomPaginatorIntl}],
 })
 export class ListComponent implements OnInit {
   displayedColumns: string[] = ['username', 'fullName', 'email', 'status', 'createdDate', 'actions'];
   dataSource: MatTableDataSource<any>;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
   constructor(private apiService: ApiService, private dialog: MatDialog) {}
+
   ngOnInit() {
     this.fetchUsers();
   }
@@ -33,6 +40,7 @@ export class ListComponent implements OnInit {
   fetchUsers() {
     this.apiService.getUsers().subscribe((users) => {
       this.dataSource = new MatTableDataSource(users);
+      this.dataSource.paginator = this.paginator;
     });
   }
 
@@ -44,22 +52,7 @@ export class ListComponent implements OnInit {
     return status === 1 ? 'green' : 'red';
   }
 
-  createUser() {
-    const newUser = {
-      first_name: 'New',
-      last_name: 'User',
-      email: 'newuser@example.com',
-      username: 'newuser',
-      created_date: new Date().toISOString(),
-      id_status: 1,
-    };
-
-    this.apiService.createUser(newUser).subscribe(() => {
-      this.fetchUsers();
-    });
-  }
-
-  updateUser(user: any) {
+  updateUser(user: User) {
     this.apiService.updateUser(user).subscribe(() => {
       this.fetchUsers();
     });

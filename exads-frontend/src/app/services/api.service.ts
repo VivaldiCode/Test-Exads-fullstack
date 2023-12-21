@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 import {map} from "rxjs/operators";
 import {User} from "../models/user.model";
 
@@ -10,7 +10,8 @@ import {User} from "../models/user.model";
 export class ApiService {
   private apiUrl = 'http://localhost:3000/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getUsers(): Observable<User[]> {
     return this.http.get<any>(this.apiUrl).pipe(
@@ -18,13 +19,22 @@ export class ApiService {
     );
   }
 
-  createUser(user: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, user);
+  createUser(user: User): Observable<any> {
+    delete user.id
+    delete user.created_date
+    return this.http.post<any>(this.apiUrl, {user: user});
   }
 
-  updateUser(user: any): Observable<any> {
+  checkUsernameAvailability(username: string): Observable<any> {
+    return this.http.get<any>(this.apiUrl + "?username=" + username);
+  }
+
+  updateUser(user: User): Observable<any> {
     const url = `${this.apiUrl}/${user.id}`;
-    return this.http.put<any>(url, user);
+    delete user.username
+    delete user.created_date
+    delete user.id
+    return this.http.patch<any>(url, {user: user});
   }
 
   deleteUser(userId: number): Observable<any> {
