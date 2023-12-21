@@ -21,28 +21,27 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {AppTranslateModule} from './translate.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ListComponent,
-    FormUserComponent,
-  ],
-  entryComponents: [FormUserComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatGridListModule,
-    MatIconModule,
-    MatDialogModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppTranslateModule,
-    FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSortModule, MatSlideToggleModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ListComponent,
+        FormUserComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatGridListModule,
+        MatIconModule,
+        MatDialogModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AppTranslateModule,
+        FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSortModule, MatSlideToggleModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

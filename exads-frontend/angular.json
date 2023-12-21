@@ -134,6 +134,5 @@
         }
       }
     }
-  },
-  "defaultProject": "fe-test-app"
+  }
 }

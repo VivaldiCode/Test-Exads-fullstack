@@ -1,5 +1,5 @@
 import {Component, Inject, OnChanges, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {ThemePalette} from "@angular/material/core";
 
@@ -16,11 +16,11 @@ export class FormUserComponent implements OnInit, OnChanges {
 
   statusText: string;
 
-  editForm: FormGroup;
+  editForm: UntypedFormGroup;
 
   constructor(
     private dialogRef: MatDialogRef<FormUserComponent>,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.createForm();
