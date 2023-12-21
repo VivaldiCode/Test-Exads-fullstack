@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {MatLegacyTableDataSource as MatTableDataSource} from "@angular/material/legacy-table";
-import {data} from "./mockData";
 import {ApiService} from "../services/api.service";
-import {MatLegacyDialog as MatDialog} from "@angular/material/legacy-dialog";
 import {FormUserComponent} from "../form-user/form-user.component";
+import {MatDialog} from "@angular/material/dialog";
+import {MatTableDataSource} from "@angular/material/table";
 
 
 @Component({
