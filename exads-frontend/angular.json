@@ -75,18 +75,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fe-test-app:build"
+            "buildTarget": "fe-test-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "fe-test-app:build:production"
+              "buildTarget": "fe-test-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fe-test-app:build"
+            "buildTarget": "fe-test-app:build"
           }
         },
         "test": {
